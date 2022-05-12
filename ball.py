@@ -18,6 +18,7 @@ class Ball(Turtle):
         self.color("white")
         self.shapesize(stretch_len = 1, stretch_wid = 1)
         self.speed("fastest")
+        self.pace= 0.1
         # self.ball_reset()
 
         self.x_move = 10
@@ -26,10 +27,9 @@ class Ball(Turtle):
     def ball_reset(self):
         print("inside reset")
         self.goto(0, 0)
-
-        print(random.choice(direction))
         self.x_move *= -1
         self.y_move *= random.choice(direction)
+        self.pace = 0.1
 
     def ball_first_move(self):
         new_y = self.ycor() + self.y_move
@@ -43,4 +43,6 @@ class Ball(Turtle):
     def ball_hit_move(self):
         print("opposite")
         self.x_move *= -1
+        self.pace *= 0.9
+
 

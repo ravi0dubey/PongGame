@@ -31,9 +31,9 @@ screen.onkey(pong2.down2,"Down")
 game_continues = True
 while game_continues:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(ball.pace)
     ball.ball_first_move()
-
+    print(ball.xcor(),ball.ycor())
 
 #Detect collision with wall on top or bottom.
     if ball.ycor() < YCORD2 or ball.ycor() > YCORD1:
